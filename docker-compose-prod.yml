@@ -1,0 +1,8 @@
+jhipster-prod-mongodb:
+  container_name: testpaypal-prod-mongodb
+  image: mongo
+  # volumes:
+  # - ~/volumes/jhipster/testpaypal/prod-mongodb/:/data/db/
+  ports:
+  - "27017:27017"
+

@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "testpaypal",
+    "packageName": "com.myapp.testpaypal",
+    "packageFolder": "com/myapp/testpaypal",
+    "authenticationType": "session",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "b358e7e4ed2fb1df58c96ba128205f9f29e0b1dc",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
