@@ -1,0 +1,89 @@
+<div ng-cloak>
+    <div class="row">
+
+        <div class="col-md-12" ng-show="!confirmIt">
+            Patienter quelques instants SVP !!!!!
+        </div>
+
+        <div class="col-md-12" ng-show="confirmIt">
+            <h1>Success Payment</h1>
+
+                <fieldset>
+                    <legend>Informations Acheteur</legend>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <tr>
+                                <th>Id Acheteur</th>
+                                <td>{{data.payer.payerInfo.payerId}}</td>
+                            </tr>
+                            <tr>
+                                <th>Nom</th>
+                                <td>{{data.payer.payerInfo.firstName}}</td>
+                            </tr>
+                            <tr>
+                                <th>Prénom</th>
+                                <td>{{data.payer.payerInfo.lastName}}</td>
+                            </tr>
+                            <tr>
+                                <th>Téléphone</th>
+                                <td>{{data.payer.payerInfo.phone}}</td>
+                            </tr>
+                            <tr>
+                                <th>Code pays</th>
+                                <td>{{data.payer.payerInfo.countryCode}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </fieldset>
+
+
+            <fieldset>
+                <legend>Informations Transactions</legend>
+                <div class="table-responsive">
+                    <table class="table table-striped table-condensed table-hover">
+                        <thead>
+                        <tr>
+                            <th>Montant</th>
+                            <th>Dévise</th>
+                            <th>Description</th>
+                            <th>Eléments Achetés</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="transaction in data.transactions">
+
+                            <td>{{transaction.amount.total}}</td>
+                            <td>{{transaction.amount.currency}}</td>
+                            <td>{{transaction.description}}</td>
+
+                            <td>
+                                <table class="table table-striped table-condensed table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Dévise</th>
+                                        <th>Prix</th>
+                                        <th>Quantité</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="item in transaction.itemList.items">
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.currency}}</td>
+                                        <td>{{item.price}}</td>
+                                        <td>{{item.quantity}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+
+
+        </div>
+    </div>
+</div>
